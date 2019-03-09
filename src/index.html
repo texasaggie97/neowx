@@ -395,6 +395,110 @@
             #end if
         </div>
 
+        #if $day.extraTemp1.has_data or $day.extraHumid2.has_data or $day.extraTemp2.has_data or $day.extraHumid2.has_data
+        <div class="row gutters row-gutters">
+            #if $day.extraTemp1.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-thermometer"></i> $Extras.Translation.extraTemp1</h4>
+                <div class="crd-content">
+                    <span class="weatherdata">$current.extraTemp1</span>
+                    <table class="meta">
+                        <tr>
+                            <td>$Extras.Translation.high:</td>
+                            <td>$day.extraTemp1.max</td>
+                            <td>($day.extraTemp1.maxtime.format("%H:%M"))</td>
+                        </tr>
+                        <tr>
+                            <td>$Extras.Translation.low:</td>
+                            <td>$day.extraTemp1.min</td>
+                            <td>($day.extraTemp1.mintime.format("%H:%M"))</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $day.extraHumid1.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-humidity"></i> $Extras.Translation.extraHumid1</h4>
+                <div class="crd-content">
+                    <span class="weatherdata">$current.extraHumid1</span>
+                    <table class="meta">
+                        <tr>
+                            <td>$Extras.Translation.high:</td>
+                            <td>$day.extraHumid1.max</td>
+                            <td>($day.extraHumid1.maxtime.format("%H:%M"))</td>
+                        </tr>
+                        <tr>
+                            <td>$Extras.Translation.low:</td>
+                            <td>$day.extraHumid1.min</td>
+                            <td>($day.extraHumid1.mintime.format("%H:%M"))</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $day.extraTemp2.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-thermometer"></i> $Extras.Translation.extraTemp2</h4>
+                <div class="crd-content">
+                    <span class="weatherdata">$current.extraTemp2</span>
+                    <table class="meta">
+                        <tr>
+                            <td>$Extras.Translation.high:</td>
+                            <td>$day.extraTemp2.max</td>
+                            <td>($day.extraTemp2.maxtime.format("%H:%M"))</td>
+                        </tr>
+                        <tr>
+                            <td>$Extras.Translation.low:</td>
+                            <td>$day.extraTemp2.min</td>
+                            <td>($day.extraTemp2.mintime.format("%H:%M"))</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $day.extraHumid2.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-humidity"></i> $Extras.Translation.extraHumid2</h4>
+                <div class="crd-content">
+                    <span class="weatherdata">$current.extraHumid2</span>
+                    <table class="meta">
+                        <tr>
+                            <td>$Extras.Translation.high:</td>
+                            <td>$day.extraHumid2.max</td>
+                            <td>($day.extraHumid2.maxtime.format("%H:%M"))</td>
+                        </tr>
+                        <tr>
+                            <td>$Extras.Translation.low:</td>
+                            <td>$day.extraHumid2.min</td>
+                            <td>($day.extraHumid2.mintime.format("%H:%M"))</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+        </div>
+        #end if
+
         <!-- GRAPHS -->
 
         <div class="row gutters row-gutters">
@@ -454,6 +558,27 @@
                 <h4>$Extras.Translation.uv</h4>
                 <a data-fancybox="gallery" href="dayuv.png"><img src="dayuv.png" alt="$Extras.Translation.uv"></a>
             </div>
+            #end if
+        </div>
+        #end if
+
+        #if $day.extraTemp1.has_data or $day.extraTemp2.has_data
+        <div class="row gutters row-gutters">
+            #if $day.extraTemp1.has_data
+            <div class="col col-6 crd graph-crd">
+                <h4>$Extras.Translation.extraTemp1</h4>
+                <a data-fancybox="gallery" href="daygarage.png"><img src="daygarage.png" alt="$Extras.Translation.extraTemp1"></a>
+            </div>
+            #else
+            <div class="col col-6"></div>
+            #end if
+            #if $day.extraTemp2.has_data
+            <div class="col col-6 crd graph-crd">
+                <h4>$Extras.Translation.extraTemp2</h4>
+                <a data-fancybox="gallery" href="dayhoop.png"><img src="dayhoop.png" alt="$Extras.Translation.extraTemp2"></a>
+            </div>
+            #else
+            <div class="col col-6"></div>
             #end if
         </div>
         #end if

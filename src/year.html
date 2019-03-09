@@ -404,6 +404,114 @@
             #end if
         </div>
 
+        #if $year.extraTemp1.has_data or $year.extraHumid2.has_data or $year.extraTemp2.has_data or $year.extraHumid2.has_data
+        <div class="row gutters row-gutters">
+            #if $year.extraTemp1.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-thermometer"></i> $Extras.Translation.extraTemp1</h4>
+                <div class="crd-content">
+
+                    <div class="row">
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.high</h4>
+                            <span class="weatherdata_small">$year.extraTemp1.max</span>
+                            <span class="weatherdata_sub">$year.extraTemp1.maxtime</span>
+                        </div>
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.low</h4>
+                            <span class="weatherdata_small">$year.extraTemp1.min</span>
+                            <span class="weatherdata_sub">$year.extraTemp1.mintime</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $year.extraHumid1.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-humidity"></i> $Extras.Translation.extraHumid1</h4>
+                <div class="crd-content">
+
+                    <div class="row">
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.high</h4>
+                            <span class="weatherdata_small">$year.extraHumid1.max</span>
+                            <span class="weatherdata_sub">$year.extraHumid1.maxtime</span>
+                        </div>
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.low</h4>
+                            <span class="weatherdata_small">$year.extraHumid1.min</span>
+                            <span class="weatherdata_sub">$year.extraHumid1.mintime</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $year.extraTemp2.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-thermometer"></i> $Extras.Translation.extraTemp2</h4>
+                <div class="crd-content">
+
+                    <div class="row">
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.high</h4>
+                            <span class="weatherdata_small">$year.extraTemp2.max</span>
+                            <span class="weatherdata_sub">$year.extraTemp2.maxtime</span>
+                        </div>
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.low</h4>
+                            <span class="weatherdata_small">$year.extraTemp2.min</span>
+                            <span class="weatherdata_sub">$year.extraTemp2.mintime</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+
+            #if $year.extraHumid2.has_data
+            <div class="col col-3 crd">
+
+                <h4><i class="wi wi-humidity"></i> $Extras.Translation.extraHumid2</h4>
+                <div class="crd-content">
+
+                    <div class="row">
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.high</h4>
+                            <span class="weatherdata_small">$year.extraHumid2.max</span>
+                            <span class="weatherdata_sub">$year.extraHumid2.maxtime</span>
+                        </div>
+                        <div class="col col-6 text-center">
+                            <h4>$Extras.Translation.low</h4>
+                            <span class="weatherdata_small">$year.extraHumid2.min</span>
+                            <span class="weatherdata_sub">$year.extraHumid2.mintime</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            #else
+            <div class="col col-3"></div>
+            #end if
+        </div>
+        #end if
+
         <!-- GRAPHS -->
 
         <div class="row gutters row-gutters">
@@ -467,18 +575,33 @@
         </div>
         #end if
 
-        #if $year.rxCheckPercent.has_data or $year.UV.has_data
+        #if $year.extraTemp1.has_data or $year.extraTemp2.has_data
+        <div class="row gutters row-gutters">
+            #if $year.extraTemp1.has_data
+            <div class="col col-6 crd graph-crd">
+                <h4>$Extras.Translation.extraTemp1</h4>
+                <a data-fancybox="gallery" href="yeargarage.png"><img src="yeargarage.png" alt="$Extras.Translation.extraTemp1"></a>
+            </div>
+            #else
+            <div class="col col-6"></div>
+            #end if
+            #if $year.extraTemp2.has_data
+            <div class="col col-6 crd graph-crd">
+                <h4>$Extras.Translation.extraTemp2</h4>
+                <a data-fancybox="gallery" href="yearhoop.png"><img src="yearhoop.png" alt="$Extras.Translation.extraTemp2"></a>
+            </div>
+            #else
+            <div class="col col-6"></div>
+            #end if
+        </div>
+        #end if
+
+        #if $year.rxCheckPercent.has_data
         <div class="row gutters row-gutters">
             #if $year.rxCheckPercent.has_data
             <div class="col col-6 crd graph-crd">
                 <h4>$Extras.Translation.rxcheck</h4>
                 <a data-fancybox="gallery" href="yearrx.png"><img src="yearrx.png" alt="$Extras.Translation.rxcheck"></a>
-            </div>
-            #end if
-            #if $year.extraTemp1.has_data
-            <div class="col col-6 crd graph-crd">
-                <h4>$Extras.Translation.extratemp</h4>
-                <a data-fancybox="gallery" href="yearpond.png"><img src="yearpond.png" alt="$Extras.Translation.extratemp"></a>
             </div>
             #end if
         </div>
